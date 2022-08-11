@@ -15,11 +15,21 @@ class CardCollectionViewCell: UICollectionViewCell {
     //셀이 생성이 되는 시점에서만 호출되며, 재사용되는 시점에는 호출되지 않는다.
     override func awakeFromNib() {
         super.awakeFromNib()
-
+        
+        print("CardCollectionViewCell", #function)
+        
         setupUI()
         
     }
-
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        
+        cardView.contentLabel.text = "A"
+        
+    }
+    
+    
     func setupUI() {
         cardView.backgroundColor = .clear
         cardView.posterImageView.backgroundColor = .lightGray
