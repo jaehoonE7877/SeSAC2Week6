@@ -14,3 +14,9 @@ extension URL {
         return baseURL + endpoint
     }
 }
+
+extension URL {
+    
+    static let clovaCelebrityURL = "https://openapi.naver.com/v1/vision/celebrity"
+    
+}

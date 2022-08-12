@@ -325,100 +325,144 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="66b-nw-A6k">
-                                <rect key="frame" x="20" y="64" width="335" height="50"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="NtY-e9-j07">
+                                <rect key="frame" x="20" y="64" width="335" height="44"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="66b-nw-A6k">
+                                        <rect key="frame" x="0.0" y="0.0" width="231" height="44"/>
+                                        <color key="tintColor" systemColor="labelColor"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="필터 카메라"/>
+                                        <connections>
+                                            <action selector="YPImagePickerButtonTapped:" destination="juc-Mn-uv4" eventType="touchUpInside" id="nyr-Is-XeD"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BZt-ou-yay">
+                                        <rect key="frame" x="239" y="0.0" width="44" height="44"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="BZt-ou-yay" secondAttribute="height" multiplier="1:1" id="c2g-FD-pip"/>
+                                        </constraints>
+                                        <color key="tintColor" systemColor="labelColor"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" image="camera.fill" catalog="system"/>
+                                        <connections>
+                                            <action selector="cameraButtonTapped:" destination="juc-Mn-uv4" eventType="touchUpInside" id="Kyr-67-czM"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tvz-vZ-gLe">
+                                        <rect key="frame" x="291" y="0.0" width="44" height="44"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="Tvz-vZ-gLe" secondAttribute="height" multiplier="1:1" id="HZY-20-JNU"/>
+                                        </constraints>
+                                        <color key="tintColor" systemColor="labelColor"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" image="photo" catalog="system"/>
+                                        <connections>
+                                            <action selector="photoLibraryButtonTapped:" destination="juc-Mn-uv4" eventType="touchUpInside" id="TFk-FE-MuV"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="PLp-Wa-vyr"/>
+                                    <constraint firstAttribute="height" constant="44" id="j8M-kV-Jm1"/>
                                 </constraints>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
-                                <connections>
-                                    <action selector="YPImagePickerButtonTapped:" destination="juc-Mn-uv4" eventType="touchUpInside" id="nyr-Is-XeD"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BZt-ou-yay">
-                                <rect key="frame" x="20" y="134" width="335" height="50"/>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="w8D-AP-RUj">
+                                <rect key="frame" x="20" y="127.99999999999997" width="335" height="487.33333333333326"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="아래 사진이 올라갑니다!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q8G-gZ-vRH">
+                                        <rect key="frame" x="0.0" y="0.0" width="335" height="39"/>
+                                        <color key="backgroundColor" systemColor="systemGreenColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="n5n-jn-sVa">
+                                        <rect key="frame" x="0.0" y="39" width="335" height="389.66666666666669"/>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KsP-Gg-J4w">
+                                        <rect key="frame" x="0.0" y="428.66666666666663" width="335" height="58.666666666666686"/>
+                                        <color key="backgroundColor" systemColor="systemYellowColor"/>
+                                        <color key="tintColor" systemColor="labelColor"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="어떤 연예인이랑 닮았을까요?"/>
+                                        <connections>
+                                            <action selector="clovaFaceButtonTapped:" destination="juc-Mn-uv4" eventType="touchUpInside" id="YNE-uh-yLe"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="tPU-H2-QcW"/>
+                                    <constraint firstItem="Q8G-gZ-vRH" firstAttribute="height" secondItem="n5n-jn-sVa" secondAttribute="height" multiplier="0.1" id="9lf-ox-De9"/>
+                                    <constraint firstItem="KsP-Gg-J4w" firstAttribute="height" secondItem="n5n-jn-sVa" secondAttribute="height" multiplier="0.15" id="W5T-JN-lCq"/>
+                                    <constraint firstItem="n5n-jn-sVa" firstAttribute="height" secondItem="w8D-AP-RUj" secondAttribute="height" multiplier="0.8" id="jte-p9-zoZ"/>
                                 </constraints>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
-                                <connections>
-                                    <action selector="cameraButtonTapped:" destination="juc-Mn-uv4" eventType="touchUpInside" id="Kyr-67-czM"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tvz-vZ-gLe">
-                                <rect key="frame" x="20" y="204" width="335" height="50"/>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="당신은 누구누구와 88.88% 닮았습니다." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lJ4-EZ-nBa">
+                                <rect key="frame" x="20" y="699.33333333333337" width="335" height="48"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="sLT-q1-ImS"/>
+                                    <constraint firstAttribute="height" constant="48" id="rAa-8F-TSX"/>
                                 </constraints>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
-                                <connections>
-                                    <action selector="photoLibraryButtonTapped:" destination="juc-Mn-uv4" eventType="touchUpInside" id="TFk-FE-MuV"/>
-                                </connections>
-                            </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="n5n-jn-sVa">
-                                <rect key="frame" x="20" y="274" width="335" height="150"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Tbl-cq-PqA">
+                                <rect key="frame" x="20" y="635.33333333333337" width="335" height="44"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x76-hV-5BP">
+                                        <rect key="frame" x="0.0" y="0.0" width="251.33333333333334" height="44"/>
+                                        <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                                        <color key="tintColor" systemColor="labelColor"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="상위 사진 갤러리에 저장"/>
+                                        <connections>
+                                            <action selector="saveToPhotoLibrary:" destination="juc-Mn-uv4" eventType="touchUpInside" id="FrG-QO-anw"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PZd-O8-lze">
+                                        <rect key="frame" x="259.33333333333331" y="0.0" width="75.666666666666686" height="44"/>
+                                        <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                                        <color key="tintColor" systemColor="labelColor"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="RESET"/>
+                                        <connections>
+                                            <action selector="resetButtonTapped:" destination="juc-Mn-uv4" eventType="touchUpInside" id="Goe-hC-I0Q"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="150" id="jS9-a0-Ews"/>
+                                    <constraint firstItem="x76-hV-5BP" firstAttribute="width" secondItem="Tbl-cq-PqA" secondAttribute="width" multiplier="0.75" id="Vnn-4M-AsQ"/>
+                                    <constraint firstAttribute="height" constant="44" id="lN1-69-5p8"/>
                                 </constraints>
-                            </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KsP-Gg-J4w">
-                                <rect key="frame" x="56" y="565" width="67" height="56"/>
-                                <color key="backgroundColor" red="0.96078431369999995" green="0.98823529409999999" blue="0.47058823529999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="Dna-3e-A3j"/>
-                                </constraints>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
-                                <connections>
-                                    <action selector="clovaFaceButtonTapped:" destination="juc-Mn-uv4" eventType="touchUpInside" id="YNE-uh-yLe"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x76-hV-5BP">
-                                <rect key="frame" x="142" y="480" width="67" height="31"/>
-                                <color key="backgroundColor" red="0.96078431369999995" green="0.41568627450000001" blue="0.47058823529999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="t6A-jq-GI8"/>
-                                </constraints>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
-                                <connections>
-                                    <action selector="saveToPhotoLibrary:" destination="juc-Mn-uv4" eventType="touchUpInside" id="FrG-QO-anw"/>
-                                </connections>
-                            </button>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="KQE-Me-0Nu"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="Tvz-vZ-gLe" firstAttribute="top" secondItem="BZt-ou-yay" secondAttribute="bottom" constant="20" id="4CS-1P-YCy"/>
-                            <constraint firstItem="KsP-Gg-J4w" firstAttribute="leading" secondItem="KQE-Me-0Nu" secondAttribute="leading" constant="20" id="4Qe-75-xrL"/>
-                            <constraint firstItem="KQE-Me-0Nu" firstAttribute="trailing" secondItem="66b-nw-A6k" secondAttribute="trailing" constant="20" id="7Q7-Hf-FYt"/>
-                            <constraint firstItem="BZt-ou-yay" firstAttribute="leading" secondItem="KQE-Me-0Nu" secondAttribute="leading" constant="20" id="AjB-4i-5mG"/>
-                            <constraint firstItem="x76-hV-5BP" firstAttribute="leading" secondItem="KQE-Me-0Nu" secondAttribute="leading" constant="20" id="FOp-ak-scR"/>
-                            <constraint firstItem="KQE-Me-0Nu" firstAttribute="trailing" secondItem="BZt-ou-yay" secondAttribute="trailing" constant="20" id="LT0-Z7-23t"/>
-                            <constraint firstItem="KQE-Me-0Nu" firstAttribute="trailing" secondItem="KsP-Gg-J4w" secondAttribute="trailing" constant="20" id="LeR-Fj-bZP"/>
-                            <constraint firstItem="KQE-Me-0Nu" firstAttribute="trailing" secondItem="n5n-jn-sVa" secondAttribute="trailing" constant="20" id="M6y-qV-TQe"/>
-                            <constraint firstItem="n5n-jn-sVa" firstAttribute="leading" secondItem="KQE-Me-0Nu" secondAttribute="leading" constant="20" id="T23-9W-bnW"/>
-                            <constraint firstItem="BZt-ou-yay" firstAttribute="top" secondItem="66b-nw-A6k" secondAttribute="bottom" constant="20" id="U0W-79-KuQ"/>
-                            <constraint firstItem="66b-nw-A6k" firstAttribute="leading" secondItem="KQE-Me-0Nu" secondAttribute="leading" constant="20" id="V7O-eQ-gLk"/>
-                            <constraint firstItem="n5n-jn-sVa" firstAttribute="top" secondItem="Tvz-vZ-gLe" secondAttribute="bottom" constant="20" id="c3F-sV-KG1"/>
-                            <constraint firstItem="66b-nw-A6k" firstAttribute="top" secondItem="KQE-Me-0Nu" secondAttribute="top" constant="20" id="cfa-lt-v94"/>
-                            <constraint firstItem="x76-hV-5BP" firstAttribute="top" secondItem="n5n-jn-sVa" secondAttribute="bottom" constant="20" id="drb-Se-bHL"/>
-                            <constraint firstItem="KsP-Gg-J4w" firstAttribute="top" secondItem="x76-hV-5BP" secondAttribute="bottom" constant="54" id="nDD-RG-jbG"/>
-                            <constraint firstItem="KQE-Me-0Nu" firstAttribute="trailing" secondItem="x76-hV-5BP" secondAttribute="trailing" constant="20" id="roM-f8-tn8"/>
-                            <constraint firstItem="KQE-Me-0Nu" firstAttribute="trailing" secondItem="Tvz-vZ-gLe" secondAttribute="trailing" constant="20" id="t07-8r-2da"/>
-                            <constraint firstItem="Tvz-vZ-gLe" firstAttribute="leading" secondItem="KQE-Me-0Nu" secondAttribute="leading" constant="20" id="t1x-GO-U3E"/>
+                            <constraint firstItem="KQE-Me-0Nu" firstAttribute="trailing" secondItem="Tbl-cq-PqA" secondAttribute="trailing" constant="20" id="6wh-Mb-05D"/>
+                            <constraint firstItem="lJ4-EZ-nBa" firstAttribute="leading" secondItem="KQE-Me-0Nu" secondAttribute="leading" constant="20" id="CZv-LW-tIX"/>
+                            <constraint firstItem="NtY-e9-j07" firstAttribute="leading" secondItem="KQE-Me-0Nu" secondAttribute="leading" constant="20" id="Cgd-Iq-Jpd"/>
+                            <constraint firstItem="lJ4-EZ-nBa" firstAttribute="top" secondItem="Tbl-cq-PqA" secondAttribute="bottom" constant="20" id="FGQ-5D-Gov"/>
+                            <constraint firstItem="KQE-Me-0Nu" firstAttribute="trailing" secondItem="w8D-AP-RUj" secondAttribute="trailing" constant="20" id="Hpu-kn-9Rm"/>
+                            <constraint firstItem="w8D-AP-RUj" firstAttribute="leading" secondItem="KQE-Me-0Nu" secondAttribute="leading" constant="20" id="Ihf-8U-TvV"/>
+                            <constraint firstItem="KQE-Me-0Nu" firstAttribute="trailing" secondItem="NtY-e9-j07" secondAttribute="trailing" constant="20" id="JhS-6O-NO4"/>
+                            <constraint firstItem="w8D-AP-RUj" firstAttribute="centerX" secondItem="LU0-ji-34H" secondAttribute="centerX" id="M0Y-QX-OfJ"/>
+                            <constraint firstItem="w8D-AP-RUj" firstAttribute="top" secondItem="NtY-e9-j07" secondAttribute="bottom" constant="20" id="Rdv-oK-ia7"/>
+                            <constraint firstItem="KQE-Me-0Nu" firstAttribute="trailing" secondItem="lJ4-EZ-nBa" secondAttribute="trailing" constant="20" id="Yz2-R5-Ht5"/>
+                            <constraint firstItem="NtY-e9-j07" firstAttribute="top" secondItem="KQE-Me-0Nu" secondAttribute="top" constant="20" id="cNb-a9-uaD"/>
+                            <constraint firstItem="w8D-AP-RUj" firstAttribute="height" secondItem="LU0-ji-34H" secondAttribute="height" multiplier="0.6" id="rTh-xx-39R"/>
+                            <constraint firstItem="Tbl-cq-PqA" firstAttribute="leading" secondItem="KQE-Me-0Nu" secondAttribute="leading" constant="20" id="xkC-VR-FDr"/>
+                            <constraint firstItem="Tbl-cq-PqA" firstAttribute="top" secondItem="w8D-AP-RUj" secondAttribute="bottom" constant="20" id="zGy-Dn-DeQ"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="resultImageView" destination="n5n-jn-sVa" id="ddM-DB-ron"/>
+                        <outlet property="resultLabel" destination="lJ4-EZ-nBa" id="BNa-pN-Ozx"/>
+                        <outlet property="titleLabel" destination="Q8G-gZ-vRH" id="Paz-Uz-e9t"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8AL-Rh-1HL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2269.5999999999999" y="1452.7093596059115"/>
+            <point key="canvasLocation" x="2260" y="1453.4482758620691"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="rnX-00-0jO">
@@ -426,6 +470,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="mb8-Nu-BSs" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="jZz-1R-chM">
+                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -447,6 +492,11 @@
         </designable>
     </designables>
     <resources>
+        <image name="camera.fill" catalog="system" width="128" height="94"/>
+        <image name="photo" catalog="system" width="128" height="93"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
@@ -458,6 +508,9 @@
         </systemColor>
         <systemColor name="systemOrangeColor">
             <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemYellowColor">
+            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

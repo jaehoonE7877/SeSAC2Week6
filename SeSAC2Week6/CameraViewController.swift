@@ -11,15 +11,27 @@ import Alamofire
 import SwiftyJSON
 import YPImagePicker
 
+struct ClovaModel{
+    
+    let name: String
+    let confidence: Double
+    
+}
+
 
 class CameraViewController: UIViewController {
 
     
     @IBOutlet weak var resultImageView: UIImageView!
+    @IBOutlet weak var resultLabel: UILabel!
+    @IBOutlet weak var titleLabel: UILabel!
     
     //UIImagePickerController 1.인스턴스 생성
     let picker = UIImagePickerController()
     
+    var list = [ClovaModel]()
+    var clovaName: String = ""
+    var clovaConfidence: String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,8 +39,20 @@ class CameraViewController: UIViewController {
         //UIImagePickerController 2. delegate 연결
         picker.delegate = self
         
+        titleLabel.text = "아래에 사진이 올라갑니다"
+        titleLabel.textAlignment = .center
+        titleLabel.font = .boldSystemFont(ofSize: 25)
         
+        resultLabel.text = "어떤 연예인과 닮은지 알려드릴게요!"
+        resultLabel.textAlignment = .center
+        resultLabel.font = .boldSystemFont(ofSize: 17)
+        resultImageView.layer.borderWidth = 1
         resultImageView.contentMode = .scaleAspectFill
+    }
+    @IBAction func resetButtonTapped(_ sender: UIButton) {
+        resultLabel.text = "어떤 연예인과 닮은지 알려드릴게요!"
+        resultImageView.image = nil
+        
     }
     
     // 사진을 라이브러리에 저장
@@ -99,41 +123,30 @@ class CameraViewController: UIViewController {
     // 문자열이 아닌 파일, 이미지, pdf 파일 자체가 그대로 전송되지 않음. => 텍스트 형태로 인코딩
     // 어떤 파일의 종류가 서버에게 전달이 되는 지 명시 = ContentType
     @IBAction func clovaFaceButtonTapped(_ sender: UIButton) {
-        print(#function)
-        let url = "https://openapi.naver.com/v1/vision/celebrity"
-        
-        //헤더에 어떤 파일의 종류가 서버에게 전달이 되는지 명시
-        let header: HTTPHeaders = [
-            "X-Naver-Client-Id" : "TNRc5NfUf6sqkTiPy72M",
-            "X-Naver-Client-Secret" : "ZWKJLPOWyO"
-            //"Content-Type" : "multipart/form-data" 왜 안해도 될까요? 이미 라이브러리에 들어있음
-        ]
-        
-        // 네이버 클로바 얼굴인식 네트워킹
         
         // UIImage를 텍스트 형태(바이너리 타입)로 변환해서 전달
         guard let imageData = resultImageView.image?.jpegData(compressionQuality: 0.5) else { return }
         
-        
-        AF.upload(multipartFormData: { multipartFormData in
-            multipartFormData.append(imageData, withName: "image")  //
-        }, to: url, headers: header)
-        .validate(statusCode: 200...500).responseData { response in //앞쪽 접두어 AF로 바꿔야 함
-            switch response.result {
-            case .success(let value):
+        ClovaAPIManager.shared.callRequest(imageData: imageData) { json in
+            
+            for item in json["faces"] {
+                let name = item.1["celebrity"]["value"].stringValue
+                let confidence = item.1["celebrity"]["confidence"].doubleValue
                 
-                let json = JSON(value)
-                print(json)
+                //print(name, confidence)
                 
-            case .failure(let error):
-                print(error)
+                let value = ClovaModel(name: name, confidence: confidence)
+                self.list.append(value)
                 
+                self.clovaName = name
+                self.clovaConfidence = String(format: "%.2f", confidence*100)
             }
+            
+            
+            self.resultLabel.text = "당신은 \(self.clovaName)과 \(self.clovaConfidence)%만큼 닮았습니다."
+            
         }
-        
-        
-        
-        
+      
     }
     
 }
