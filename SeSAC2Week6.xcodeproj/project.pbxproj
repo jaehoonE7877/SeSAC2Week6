@@ -32,6 +32,9 @@
 		259EA4B528A4939400A8BDF0 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 259EA4B428A4939400A8BDF0 /* MapViewController.swift */; };
 		25AF9D1628A330F000222223 /* Protocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25AF9D1528A330F000222223 /* Protocol.swift */; };
 		25AF9D1828A343E100222223 /* TMDBAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25AF9D1728A343E100222223 /* TMDBAPIManager.swift */; };
+		25ECB55928A5D6DC00D141F2 /* YPImagePicker in Frameworks */ = {isa = PBXBuildFile; productRef = 25ECB55828A5D6DC00D141F2 /* YPImagePicker */; };
+		25ECB55B28A5DD1500D141F2 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25ECB55A28A5DD1500D141F2 /* CameraViewController.swift */; };
+		25ECB55D28A62F8D00D141F2 /* ClovaAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25ECB55C28A62F8D00D141F2 /* ClovaAPIManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -59,6 +62,8 @@
 		259EA4B428A4939400A8BDF0 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		25AF9D1528A330F000222223 /* Protocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocol.swift; sourceTree = "<group>"; };
 		25AF9D1728A343E100222223 /* TMDBAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMDBAPIManager.swift; sourceTree = "<group>"; };
+		25ECB55A28A5DD1500D141F2 /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
+		25ECB55C28A62F8D00D141F2 /* ClovaAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClovaAPIManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +74,7 @@
 				2555BA0328A0903A0090B983 /* SwiftyJSON in Frameworks */,
 				2555B9FD28A090250090B983 /* Kingfisher in Frameworks */,
 				2555BA0028A0902F0090B983 /* Alamofire in Frameworks */,
+				25ECB55928A5D6DC00D141F2 /* YPImagePicker in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -115,6 +121,7 @@
 				2555B9E928A08FE60090B983 /* SceneDelegate.swift */,
 				2555B9EB28A08FE60090B983 /* ViewController.swift */,
 				2555B9ED28A08FE60090B983 /* Main.storyboard */,
+				25ECB55A28A5DD1500D141F2 /* CameraViewController.swift */,
 				259EA4B428A4939400A8BDF0 /* MapViewController.swift */,
 				250F50C228A1F6340031CC0A /* MainViewController.swift */,
 				2555BA0F28A0AC0A0090B983 /* ClosureViewController.swift */,
@@ -133,6 +140,7 @@
 				2555BA0B28A095170090B983 /* URL+Extension.swift */,
 				2555BA0D28A0A7900090B983 /* KakaoAPIManager.swift */,
 				25AF9D1728A343E100222223 /* TMDBAPIManager.swift */,
+				25ECB55C28A62F8D00D141F2 /* ClovaAPIManager.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -165,6 +173,7 @@
 				2555B9FC28A090250090B983 /* Kingfisher */,
 				2555B9FF28A0902F0090B983 /* Alamofire */,
 				2555BA0228A0903A0090B983 /* SwiftyJSON */,
+				25ECB55828A5D6DC00D141F2 /* YPImagePicker */,
 			);
 			productName = SeSAC2Week6;
 			productReference = 2555B9E428A08FE60090B983 /* SeSAC2Week6.app */;
@@ -198,6 +207,7 @@
 				2555B9FB28A090250090B983 /* XCRemoteSwiftPackageReference "Kingfisher" */,
 				2555B9FE28A0902F0090B983 /* XCRemoteSwiftPackageReference "Alamofire" */,
 				2555BA0128A0903A0090B983 /* XCRemoteSwiftPackageReference "SwiftyJSON" */,
+				25ECB55728A5D6DC00D141F2 /* XCRemoteSwiftPackageReference "YPImagePicker" */,
 			);
 			productRefGroup = 2555B9E528A08FE60090B983 /* Products */;
 			projectDirPath = "";
@@ -232,12 +242,14 @@
 				250F50C528A1FC280031CC0A /* MainTableViewCell.swift in Sources */,
 				2555B9EC28A08FE60090B983 /* ViewController.swift in Sources */,
 				2555B9E828A08FE60090B983 /* AppDelegate.swift in Sources */,
+				25ECB55B28A5DD1500D141F2 /* CameraViewController.swift in Sources */,
 				25AF9D1628A330F000222223 /* Protocol.swift in Sources */,
 				2555BA1028A0AC0A0090B983 /* ClosureViewController.swift in Sources */,
 				250F50C328A1F6340031CC0A /* MainViewController.swift in Sources */,
 				250F50C028A1F37B0031CC0A /* CardCollectionViewCell.swift in Sources */,
 				2555BA0728A091120090B983 /* APIKey.swift in Sources */,
 				250F50BD28A1E6470031CC0A /* CardView.swift in Sources */,
+				25ECB55D28A62F8D00D141F2 /* ClovaAPIManager.swift in Sources */,
 				2555B9EA28A08FE60090B983 /* SceneDelegate.swift in Sources */,
 				250F50B928A1E0370031CC0A /* SeSACButton.swift in Sources */,
 				2555BA0E28A0A7900090B983 /* KakaoAPIManager.swift in Sources */,
@@ -490,6 +502,14 @@
 				minimumVersion = 5.0.0;
 			};
 		};
+		25ECB55728A5D6DC00D141F2 /* XCRemoteSwiftPackageReference "YPImagePicker" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Yummypets/YPImagePicker.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -507,6 +527,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 2555BA0128A0903A0090B983 /* XCRemoteSwiftPackageReference "SwiftyJSON" */;
 			productName = SwiftyJSON;
+		};
+		25ECB55828A5D6DC00D141F2 /* YPImagePicker */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 25ECB55728A5D6DC00D141F2 /* XCRemoteSwiftPackageReference "YPImagePicker" */;
+			productName = YPImagePicker;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

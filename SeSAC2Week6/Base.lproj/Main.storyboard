@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="WSm-3k-JNH">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="juc-Mn-uv4">
     <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
@@ -317,13 +317,115 @@
             </objects>
             <point key="canvasLocation" x="810" y="1467"/>
         </scene>
+        <!--Camera View Controller-->
+        <scene sceneID="LTd-ub-F0d">
+            <objects>
+                <viewController id="juc-Mn-uv4" customClass="CameraViewController" customModule="SeSAC2Week6" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="LU0-ji-34H">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="66b-nw-A6k">
+                                <rect key="frame" x="20" y="64" width="335" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="PLp-Wa-vyr"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                <connections>
+                                    <action selector="YPImagePickerButtonTapped:" destination="juc-Mn-uv4" eventType="touchUpInside" id="nyr-Is-XeD"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BZt-ou-yay">
+                                <rect key="frame" x="20" y="134" width="335" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="tPU-H2-QcW"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                <connections>
+                                    <action selector="cameraButtonTapped:" destination="juc-Mn-uv4" eventType="touchUpInside" id="Kyr-67-czM"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tvz-vZ-gLe">
+                                <rect key="frame" x="20" y="204" width="335" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="sLT-q1-ImS"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                <connections>
+                                    <action selector="photoLibraryButtonTapped:" destination="juc-Mn-uv4" eventType="touchUpInside" id="TFk-FE-MuV"/>
+                                </connections>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="n5n-jn-sVa">
+                                <rect key="frame" x="20" y="274" width="335" height="150"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="150" id="jS9-a0-Ews"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KsP-Gg-J4w">
+                                <rect key="frame" x="56" y="565" width="67" height="56"/>
+                                <color key="backgroundColor" red="0.96078431369999995" green="0.98823529409999999" blue="0.47058823529999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="Dna-3e-A3j"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                <connections>
+                                    <action selector="clovaFaceButtonTapped:" destination="juc-Mn-uv4" eventType="touchUpInside" id="YNE-uh-yLe"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x76-hV-5BP">
+                                <rect key="frame" x="142" y="480" width="67" height="31"/>
+                                <color key="backgroundColor" red="0.96078431369999995" green="0.41568627450000001" blue="0.47058823529999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="t6A-jq-GI8"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                <connections>
+                                    <action selector="saveToPhotoLibrary:" destination="juc-Mn-uv4" eventType="touchUpInside" id="FrG-QO-anw"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="KQE-Me-0Nu"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Tvz-vZ-gLe" firstAttribute="top" secondItem="BZt-ou-yay" secondAttribute="bottom" constant="20" id="4CS-1P-YCy"/>
+                            <constraint firstItem="KsP-Gg-J4w" firstAttribute="leading" secondItem="KQE-Me-0Nu" secondAttribute="leading" constant="20" id="4Qe-75-xrL"/>
+                            <constraint firstItem="KQE-Me-0Nu" firstAttribute="trailing" secondItem="66b-nw-A6k" secondAttribute="trailing" constant="20" id="7Q7-Hf-FYt"/>
+                            <constraint firstItem="BZt-ou-yay" firstAttribute="leading" secondItem="KQE-Me-0Nu" secondAttribute="leading" constant="20" id="AjB-4i-5mG"/>
+                            <constraint firstItem="x76-hV-5BP" firstAttribute="leading" secondItem="KQE-Me-0Nu" secondAttribute="leading" constant="20" id="FOp-ak-scR"/>
+                            <constraint firstItem="KQE-Me-0Nu" firstAttribute="trailing" secondItem="BZt-ou-yay" secondAttribute="trailing" constant="20" id="LT0-Z7-23t"/>
+                            <constraint firstItem="KQE-Me-0Nu" firstAttribute="trailing" secondItem="KsP-Gg-J4w" secondAttribute="trailing" constant="20" id="LeR-Fj-bZP"/>
+                            <constraint firstItem="KQE-Me-0Nu" firstAttribute="trailing" secondItem="n5n-jn-sVa" secondAttribute="trailing" constant="20" id="M6y-qV-TQe"/>
+                            <constraint firstItem="n5n-jn-sVa" firstAttribute="leading" secondItem="KQE-Me-0Nu" secondAttribute="leading" constant="20" id="T23-9W-bnW"/>
+                            <constraint firstItem="BZt-ou-yay" firstAttribute="top" secondItem="66b-nw-A6k" secondAttribute="bottom" constant="20" id="U0W-79-KuQ"/>
+                            <constraint firstItem="66b-nw-A6k" firstAttribute="leading" secondItem="KQE-Me-0Nu" secondAttribute="leading" constant="20" id="V7O-eQ-gLk"/>
+                            <constraint firstItem="n5n-jn-sVa" firstAttribute="top" secondItem="Tvz-vZ-gLe" secondAttribute="bottom" constant="20" id="c3F-sV-KG1"/>
+                            <constraint firstItem="66b-nw-A6k" firstAttribute="top" secondItem="KQE-Me-0Nu" secondAttribute="top" constant="20" id="cfa-lt-v94"/>
+                            <constraint firstItem="x76-hV-5BP" firstAttribute="top" secondItem="n5n-jn-sVa" secondAttribute="bottom" constant="20" id="drb-Se-bHL"/>
+                            <constraint firstItem="KsP-Gg-J4w" firstAttribute="top" secondItem="x76-hV-5BP" secondAttribute="bottom" constant="54" id="nDD-RG-jbG"/>
+                            <constraint firstItem="KQE-Me-0Nu" firstAttribute="trailing" secondItem="x76-hV-5BP" secondAttribute="trailing" constant="20" id="roM-f8-tn8"/>
+                            <constraint firstItem="KQE-Me-0Nu" firstAttribute="trailing" secondItem="Tvz-vZ-gLe" secondAttribute="trailing" constant="20" id="t07-8r-2da"/>
+                            <constraint firstItem="Tvz-vZ-gLe" firstAttribute="leading" secondItem="KQE-Me-0Nu" secondAttribute="leading" constant="20" id="t1x-GO-U3E"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="resultImageView" destination="n5n-jn-sVa" id="ddM-DB-ron"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8AL-Rh-1HL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2269.5999999999999" y="1452.7093596059115"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="rnX-00-0jO">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="mb8-Nu-BSs" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="jZz-1R-chM">
-                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
