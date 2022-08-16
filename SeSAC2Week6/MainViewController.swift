@@ -81,7 +81,7 @@ extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSour
         
         //print("MainViewController", #function, indexPath)
         
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CardCollectionViewCell", for: indexPath) as? CardCollectionViewCell else { return UICollectionViewCell() }
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CardCollectionViewCell.reuseIdentifier, for: indexPath) as? CardCollectionViewCell else { return UICollectionViewCell() }
         
         if collectionView == bannerCollectionView {
             cell.cardView.posterImageView.backgroundColor = color[Int.random(in: 0...4)]

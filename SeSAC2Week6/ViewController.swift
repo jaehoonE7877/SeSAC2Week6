@@ -29,10 +29,10 @@ class ViewController: UIViewController {
     
     
     
-    var blogList: [String] = []
-    var cafeList = [String]()
+    private var blogList: [String] = []
+    private var cafeList = [String]()
     
-    var isExpanded = false // false: 2줄, true = 0으로!
+    private var isExpanded = false // false: 2줄, true = 0으로!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,11 +42,10 @@ class ViewController: UIViewController {
         searchTableView.delegate = self
         searchTableView.dataSource = self
         searchTableView.rowHeight = UITableView.automaticDimension  //모든 섹션의 셀에 대해서 유동적으로!
-        
 
     }
     
-    func searchBlog() {
+    private func searchBlog() {
         
         //네트워킹을 하는 곳과 분리 시키기!(싱글톤 만들어서)
         KakaoAPIManager.shared.callRequest(type: .blog, query: "고래밥") { json in
@@ -63,7 +62,7 @@ class ViewController: UIViewController {
         
     }
     
-    func searchCafe() {
+    private func searchCafe() {
         
         KakaoAPIManager.shared.callRequest(type: .cafe, query: "고래밥") { json in
             

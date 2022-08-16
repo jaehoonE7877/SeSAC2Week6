@@ -22,7 +22,7 @@ class MainTableViewCell: UITableViewCell {
         
     }
 
-    func setupUI() {
+    private func setupUI() {
         
         titleLabel.font = .boldSystemFont(ofSize: 24)
         titleLabel.text = "넷플릭스 인기 콘텐츠"
@@ -31,7 +31,7 @@ class MainTableViewCell: UITableViewCell {
         contentCollectionView.collectionViewLayout = collectionViewLayout()
     }
 
-    func collectionViewLayout() -> UICollectionViewFlowLayout {
+    private func collectionViewLayout() -> UICollectionViewFlowLayout {
         
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
